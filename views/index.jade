@@ -1,0 +1,193 @@
+extends layout
+
+block body_content
+	#myModal.modal.fade
+		.modal-dialog.custom-content
+			.modal-content.custom-content.dialog-dummy(data-dismiss='modal')
+			a(href='https://play.google.com/store/apps/details?id=tw.savy.ai')
+				img.dialog-googlepay(alt='Get it on Google Play', src='https://developer.android.com/images/brand/en_generic_rgb_wo_45.png', onclick='goog_report_conversion()')
+
+	.pre-loader
+		.load-con
+			.autofont.animated.fadeInDown AutoInsight
+			.spinner
+				.bounce1
+				.bounce2
+				.bounce3
+	.go-down
+		a(href='#nav')
+			i.fa.fa-angle-down.fa-5x
+
+	//- Wrap all page content here
+	#wrap.home
+		header.masthead
+			#slider.slider-container
+				.tp-banner-container
+					.tp-banner
+						ul
+							li(data-transition='slotfade-horizontal')
+								//- MAIN IMAGE
+								img(src='/images/dummy.png', data-lazyload='/images/banner.jpg', alt='', data-bgfit='cover', data-bgposition='center center', data-bgrepeat='no-repeat')
+								//- LAYERS
+								.tp-caption.large_white_bold.sft(data-x='center', data-y='center', data-hoffset='0', data-voffset='-170')
+									h1 Buy used cars 
+								.tp-caption.large_white_bold.sft(data-x='center', data-y='center', data-hoffset='0', data-voffset='-80')
+									h1 with confidence
+								.tp-caption.sfl.hidden-xs(data-x='center', data-y='center', data-hoffset='0', data-voffset='10')
+									h2 Integrated used cars history report &amp; expert appraisal
+								.tp-caption.sfl(data-x='center', data-y='center', data-hoffset='0', data-voffset='130')
+									a.btn.btn-auto-naked.btn-contrast(href='#download')
+										b GET FREE ACCESS
+			//- Fixed navbar
+			#nav.navbar.navbar-static-top(role='navigation')
+				.container
+					.navbar-header
+						button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+							span.sr-only Toggle navigation
+							i.fa.fa-align-justify
+						a.navbar-brand
+							.autofont AutoInsight
+								small - BETA
+					//- Collect the nav links, forms, and other content for toggling
+					#bs-example-navbar-collapse-1.collapse.navbar-collapse
+						ul.nav.navbar-nav.navbar-right
+							li.active
+								a(href='#slider') Home
+							li
+								a(href='#download') Join Now
+							li.social-nav.visible-lg
+								a(href='https://twitter.com/SavyAutoInsight')
+									i.fa.fa-twitter
+								a(href='https://www.facebook.com/savyautoinsight')
+									i.fa.fa-facebook
+							li
+								a(href='https://play.google.com/store/apps/details?id=tw.savy.ai', style='padding: 12px 15px;')
+									img(alt='Get it on Google Play', src='https://developer.android.com/images/brand/en_generic_rgb_wo_45.png', onclick='goog_report_conversion()')
+	section#features
+		.container
+			.row
+				.col-md-7
+					h1 Get your car appraisal on the go
+					.media.media-circle
+						a.pull-left
+							i.media-object.fa.fa-angle-right.fa-2x
+						.media-body
+							h4.media-heading VIN Number Check
+							p
+								| Integrated analysis from car history reports, customer and expert
+								| appraisal
+					.media.media-circle
+						a.pull-left
+							i.media-object.fa.fa-angle-right.fa-2x
+						.media-body
+							h4.media-heading Mobile Access
+							p Appraise your car with one click anywhere
+				.col-md-5
+					img.img-responsive.ipad-image.img-center(src='images/start_app.png', alt='')
+
+	section#about
+		.container
+			.row
+				.col-md-8.col-md-push-2.clearfix
+					.section-heading.hidden-xs
+					h1 All the information you need before you buy a used car!
+					span.divider
+				.col-md-12
+					.row
+						.col-md-5.col-md-push-1.vcenter
+							.media.vertical.sp-effect5
+								a
+									i.media-object.fa.fa-user.fa-2x
+							.media-body
+								h4.media-heading Customer and expert appraisal
+								p AutoInsight grading and price estimation
+								p Powered by Edmunds.com
+						.col-md-5.col-md-push-1.vcenter
+							img.img-responsive(src='images/review.png', alt='')
+				.col-md-12
+					.row
+						.col-md-5.col-md-push-1.vcenter
+							.media.vertical.sp-effect5
+								a
+									i.media-object.fa.fa-check.fa-2x
+							.media-body
+								h4.media-heading Trusted history report
+								p Free access during beta test only!
+								p
+									| National Motor Vehicle Title Information (NMVTIS) and
+									| Industry Sources
+						.col-md-5.col-md-push-1.vcenter
+							img.img-responsive(src='images/report.png', alt='')
+
+	section#about
+		.container
+			.row
+				.col-md-8.col-md-push-2.clearfix
+					.section-heading
+						h1(style='display:inline') Your virtual mechanic
+						h2(style='display:inline')  - coming soon
+						span.divider
+				.col-md-12
+					.row
+						.col-md-5.col-md-push-1.vcenter
+							img.img-responsive(src='images/obd_intro.png', alt='')
+						.col-md-5.col-md-push-1.vcenter
+							.media.vertical.sp-effect5
+								a
+								i.media-object.fa.fa-car.fa-2x
+							.media-body
+								h4.media-heading Self-inspection
+								p Professional grade auto-inspection using our car adapter
+								p Predict when your car will break down
+
+	section#download
+		.container.custom_container
+			.divider
+			|             
+			.row.col-md-12.clearfix
+				.section-heading
+					h1 Download AutoInsight
+					h3
+						| Get a 
+						a FREE HISTORY REPORT
+						|  in our beta testing right now!
+					h4 Download AutoInsight from Google play. Coming soon to Apple app strore.
+				a(href='https://play.google.com/store/apps/details?id=tw.savy.ai', style='padding: 12px 15px;')
+					img.center-block(alt='Get it on Google Play', src='https://developer.android.com/images/brand/en_generic_rgb_wo_60.png', onclick='goog_report_conversion()')
+
+	section#partnerlist
+		.container.custom_container
+			.divider
+			|             
+			.row.col-md-12.clearfix
+				.section-heading
+					h1 Partners
+					h4 AutoInsight is proud to partner with leaders in the automotive industry.
+				.partner_container
+					a(href='https://www.vinaudit.com/', target='_blank')
+						img.partner_img(src='images/partner_vinaudit.png')
+					a(href='https://www.edmunds.com/', target='_blank')
+						img.partner_img(src='images/partner_edmunds.png')
+
+block body_script
+	script.
+		(function ($) {
+		  window.fnames = new Array();
+		  window.ftypes = new Array();
+		  fnames[0] = 'EMAIL';
+		  ftypes[0] = 'email';
+		  }(jQuery)
+		  );
+		  var $mcj = jQuery.noConflict(true);
+
+		$(document).ready(function () {
+		  appMaster.preLoader();
+		  appMaster.smoothScroll();
+		  appMaster.animateScript();
+		  appMaster.navSpy();
+		  appMaster.revSlider();
+		  appMaster.stellar();
+		  appMaster.isoTop();
+		  appMaster.canvasHack();
+		  showDialog();
+		  });
