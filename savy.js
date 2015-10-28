@@ -13,8 +13,10 @@ var express = require('express')
   , Q = require('q')
   , useragent = require('express-useragent')
   , passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy
   , logger = require('./models/Logger').getLogger('system.log')
   , template = require('./models/Template')
+  , flash = require('connect-flash')
   ;
 
 /**
@@ -93,6 +95,29 @@ function initApp()
 		resave: false,
 		saveUninitialized: true
 	}));
+	app.use(flash());
+
+	passport.serializeUser(function(user, done){
+		console.log("serializing user" + user);
+		done(null, user.id);
+	});
+
+	passport.deserializeUser(function(user, done){
+		console.log("deserializiing user " + user);
+		done(null, user);
+	});
+
+	passport.use(new LocalStrategy({
+		usernameField:'email',
+		passwordField:'password'
+	},
+		function(username, password, done){
+			console.log(username);
+			console.log(password);
+			return done(null, false, {message:'testing'});
+			//return done(null, {id:123});
+		}
+		));
 	// User authentication using Passport module, and it should be placed after express.session().
 	app.use(passport.initialize());
 	app.use(passport.session());
@@ -122,7 +147,12 @@ function initApp()
 	// TODO: Write your route here.
 	//
 	app.get('/', routeIndex.index);
-	
+	app.get('/login', routeIndex.login);
+	app.post('/auth/login', passport.authenticate('local', {
+		successRedirect:'/',
+		failureRedirect:'/login',
+		failureFlash:true,
+	}));
 	// Restful sample
 	app.use('/resource/restful', require('./routes/restful/RESTful'));
 

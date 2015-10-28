@@ -20,6 +20,8 @@
 		"cassandra-driver": "*",
 		"express-useragent": "*",
 		"passport": "*",
+		"passport-local":"*",
+		"connect-flash":"*",
 		"moment": "*",
 		"winston": "*"
 	}

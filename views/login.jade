@@ -1,0 +1,32 @@
+extends layout
+
+block body_content
+	div(style="text-align:center")
+		h1 Login
+		form(action="auth/login", method="POST", name="login_user_form")
+			div(style="display:none")
+				input#csrf_token(name="csrf_token", type="hidden", value="None")
+				input#next(name="next", type="hidden", value="")
+			p
+				label(for="email") Email Address
+				input#email(name="email", type="text", value="")
+			p
+				label(for="password") Password
+				input#password(name="password", type="password", value="")
+			p
+				label(for="remember") Remember Me
+				input#remember(name="remember", type="checkbox", value="y")
+			p
+				input#next(name="next", type="hidden", value="")
+			p
+				input#submit(name="submit", type="submit", value="Login")
+	//- h2 Menu
+	//- ul
+	//- 	li
+	//- 		a(href="/auth/login") Login
+	//- 	li
+	//- 		a(href="/auth/register") Register
+	//- 	li
+	//- 		a(href="/auth/reset") Forgot password
+	//- 	li
+	//- 		a(href="/auth/confirm") Confirm account
