@@ -1,0 +1,34 @@
+{
+	"NODE_ENV": "development",
+	"development": {
+		"context.domain": 		"test.cloudeep.net:3000",
+		"context.port": 		"3000",
+		"context.host": 		"localhost",
+		"context.path": 		"",
+		"folder.uploads": 		"public/uploads",
+		"folder.tmp": 			"public/tmp",
+		"url.uploads": 			"/uploads",
+		"url.tmp": 				"/tmp",
+		"cassandra.hosts": 		["localhost"],
+		"cassandra.poolSize": 	16,
+		"cassandra.keyspace": 	"Admonitus"
+	},
+	"test": {
+		"context.domain": 		"demo.cloudeep.net",
+		"context.port": 		"3000",
+		"context.host": 		"demo.cloudeep.net",
+		"context.path": 		"",
+		"folder.uploads": 		"public/uploads",
+		"folder.tmp": 			"public/tmp",
+		"url.uploads": 			"/uploads",
+		"url.tmp": 				"/tmp",
+		"cassandra.hosts": 		["localhost"],
+		"cassandra.poolSize": 	16,
+		"cassandra.keyspace": 	"Admonitus"
+	},
+	"stage": {
+	},
+	"production": {
+	}
+}
+
